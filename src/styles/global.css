@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+/* Anti-aliasing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+@media (min-width: 768px) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}

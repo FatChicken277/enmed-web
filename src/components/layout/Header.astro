@@ -1,0 +1,96 @@
+---
+import { Menu } from "lucide-react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTiktok,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+const menuItems = {
+  Notas: "/notas",
+  Producción: "/produccion",
+};
+
+const categories = {
+  Style: "/style",
+  Music: "/music",
+  Sneakers: "/sneakers",
+  PopCulture: "/pop-culture",
+  Sports: "/sports",
+  Life: "/life",
+  Shows: "/shows",
+  ComplexCon: "/complex-con",
+};
+
+const socials = {
+  Instagram: { icon: faInstagram, href: "https://www.instagram.com/enmed202" },
+  TikTok: { icon: faTiktok, href: "https://www.tiktok.com/@enmedco" },
+  Facebook: {
+    icon: faFacebook,
+    href: "https://www.facebook.com/p/ENMED-100078962700360",
+  },
+};
+---
+
+<!-- Header -->
+<header class="bg-white shadow-md">
+  <div class="bg-black h-5"></div>
+
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="/logos/logo-color.png" alt="Enmed Logo" class="h-12 mr-10" />
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-6">
+        {
+          Object.entries(menuItems).map(([name, href]) => (
+            <a
+              href={href}
+              class="text-xl font-extrabold decoration-8 hover:underline hover:underline-offset-[24px]"
+            >
+              {name.toUpperCase()}
+            </a>
+          ))
+        }
+        <a
+          href="https://www.808fest.com"
+          target="_blank"
+          class="text-xl font-extrabold decoration-8 hover:underline hover:underline-offset-[24px] text-green-500"
+          >808 FEST</a
+        >
+      </nav>
+    </div>
+
+    <!-- Socials -->
+    <nav class="hidden md:flex space-x-6">
+      {
+        Object.entries(socials).map(([_name, { icon, href }]) => (
+          <a href={href} target="_blank">
+            <FontAwesomeIcon icon={icon} client:load />
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden"><Menu /></div>
+  </div>
+
+  <!-- Categories -->
+  <nav class="bg-black text-white">
+    <div class="container mx-auto px-4 py-4 flex items-center space-x-6">
+      {
+        Object.entries(categories).map(([category, href]) => (
+          <a
+            href={href}
+            class="text-xs font-extrabold decoration-2 hover:underline hover:underline-offset-8"
+          >
+            {category.toUpperCase()}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>

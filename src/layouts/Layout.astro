@@ -4,6 +4,8 @@ import { SEO } from "astro-seo";
 
 import { ClientRouter } from "astro:transitions";
 
+import Header from "../components/layout/Header.astro";
+
 const { title } = Astro.props;
 
 const seoConfig = {
@@ -47,6 +49,10 @@ const seoConfig = {
     <ClientRouter />
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <footer></footer>
   </body>
 </html>
