@@ -1,10 +1,76 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
   title="Home | Noticias, cultura, eventos, colectivo, difusión, produccion, música urbana y más"
 >
-  <Welcome />
+  <div class="container mx-auto px-4 py-10 grid grid-cols-3 gap-4">
+    <div class="col-span-2 space-y-4">
+      <!-- Featured Content -->
+      <section class="bg-amber-500 relative">
+        <article class="relative aspect-[21/9]">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+          >
+          </div>
+          <img src="/raw.jpg" alt="" class="aspect-[21/9] object-cover" />
+          <h1
+            class="absolute bottom-0 left-0 p-4 text-white font-semibold text-3xl lg:text-4xl"
+          >
+            Rawblacksky x Busta JB! - ENMED SESSION #7 | The Woo
+          </h1>
+        </article>
+      </section>
+
+      <!-- Vlogs -->
+      <section class="">
+        <article class="#bg-amber-800 space-y-4">
+          <h2 class="text-2xl font-bold">VLOGS</h2>
+
+          <div class="grid grid-cols-3 gap-4">
+            <iframe
+              class="aspect-[16/9] w-full col-span-2"
+              src="https://www.youtube.com/embed/xXrXy2nWkEE"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+
+            <div class="col-span-1 space-y-2">
+              <iframe
+                class="aspect-[16/9] w-full"
+                src="https://www.youtube.com/embed/1kQovboczvA"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+
+              <iframe
+                class="aspect-[16/9] w-full"
+                src="https://www.youtube.com/embed/ct0uCpL0pZE"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Related -->
+      <section class="">
+        <article class="">
+          <h2 class="text-2xl font-bold">Related</h2>
+        </article>
+      </section>
+    </div>
+
+    <aside class="col-span-1 bg-green-500 space-y-4">
+      <!-- Announcements -->
+      <section class="bg-white">Announcements</section>
+      <hr class="opacity-20" />
+      <section class="bg-white">Latest</section>
+    </aside>
+  </div>
 </Layout>
